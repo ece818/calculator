@@ -1,10 +1,12 @@
 const display = document.getElementById("display");
 
 function appendToDisplay(input) {
-  if (display.value == 0) {
-    if (input == "+" || input == "*" || input == "/") {
+  if (display.value === 0) {
+    if (input == "+" || input == "*" || input == "/" || input == "0") {
       display.value = "Enter A Number";
       setTimeout(clearDisplay, 1500);
+    } else if (input == ".") {
+      display.value = "0" + input;
     } else {
       display.value = input;
     }
