@@ -71,6 +71,7 @@ button:active {
 
 .blank {
   background-color: hsl(0, 0%, 50%);
+  cursor: default;
 }
 
 .blank:hover {
