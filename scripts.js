@@ -6,12 +6,16 @@ function appendToDisplay(input) {
       display.value = "Enter A Number";
       setTimeout(clearDisplay, 1500);
     } else if (input == ".") {
-      display.value = "0" + input;
+      display.value = "0.";
     } else {
       display.value = input;
     }
   } else {
-    display.value += input;
+    if (display.value === "0.") {
+      display.value = `0.${input}`;
+    } else {
+      display.value += input;
+    }
   }
 }
 
