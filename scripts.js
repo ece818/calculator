@@ -31,7 +31,7 @@ function appendToDisplay(input) {
     } else {
       let beforeError = display.value;
       display.style.fontSize = "2.25rem";
-      display.value = `You entered ${input} twice`;
+      display.value = `Enter a number`;
       setTimeout(() => {
         display.style.fontSize = "3rem";
         display.value = beforeError;
@@ -61,4 +61,7 @@ function calculate() {
   } catch (error) {
     log.error(error);
   }
+}
+function subtractFromDisplay() {
+  display.value = display.value.slice(0, -1);
 }
