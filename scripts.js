@@ -1,4 +1,5 @@
 const display = document.getElementById("display");
+
 let lastChar = "0";
 function appendToDisplay(input) {
   getLastChar();
@@ -25,12 +26,18 @@ function appendToDisplay(input) {
       input === "." ||
       input === "-")
   ) {
-    let beforeError = display.value;
-    display.value = `You entered ${input} which is the same as ${lastChar}`;
-    setTimeout(() => {
-      display.value = beforeError;
-      getLastChar();
-    }, 1500);
+    if (input == ".") {
+      appendToDisplay(`0${input}`);
+    } else {
+      let beforeError = display.value;
+      display.style.fontSize = "2.25rem";
+      display.value = `You entered ${input} twice`;
+      setTimeout(() => {
+        display.style.fontSize = "3rem";
+        display.value = beforeError;
+        getLastChar();
+      }, 1500);
+    }
   } else {
     if (display.value === "0.") {
       display.value = `0.${input}`;
