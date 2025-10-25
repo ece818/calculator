@@ -50,6 +50,7 @@ button {
   font-size: 3rem;
   font-family: monospace;
   text-align: left;
+  border: none;
 }
 
 button:hover {
