@@ -1,6 +1,9 @@
 const display = document.getElementById("display");
 let parenthesisOn = false;
 let lastChar = "0";
+
+let optSymbol = ["+", "*", "/", ".", "-", "("];
+
 function appendToDisplay(input) {
   getLastChar();
   if (display.value === "0") {
@@ -14,18 +17,7 @@ function appendToDisplay(input) {
       display.value = input;
       getLastChar();
     }
-  } else if (
-    (lastChar === "+" ||
-      lastChar === "*" ||
-      lastChar === "/" ||
-      lastChar === "." ||
-      lastChar === "-") &&
-    (input === "+" ||
-      input === "*" ||
-      input === "/" ||
-      input === "." ||
-      input === "-")
-  ) {
+  } else if (optSymbol.includes(lastChar) && optSymbol.includes(input)) {
     if (input == ".") {
       appendToDisplay(`0${input}`);
     } else {
