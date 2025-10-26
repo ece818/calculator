@@ -8,39 +8,57 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 
-<body onload="clearDisplay()">
+<body id="body" onload="clearDisplay(), formatText()">
     <div class="calculator">
-        <input readonly class="display" id="display" value="" />
+        <input class="display" id="display" value="" maxlength="11" />
+        <div>
+            <div id="selectorAll">
+
+                <div id="selector" class="selector">
+                    <label>Calculator</label><input type="radio" name="cal-type" value="Calculator" checked>
+                    <label>Temperature</label><input type="radio" name="cal-type" value="Temperature">
+                </div>
+                <div id="tempSub" class="selector">
+                    <label>&deg;F => C&deg;</label>
+                    <input type="radio" checked name="temp-conversion" value="F2C">
+                    <label>&deg;C => F&deg;</label>
+                    <input type="radio" name="temp-conversion" value="C2F">
+                </div>
+            </div>
+        </div>
+
+
         <div class="keys">
-            <button class="opBtn resizeBtn" onclick="addParenthesis('(')">( ) </button>
-            <button class="blank"></button>
-            <button class=" opBtn" onclick="subtractFromDisplay()" id="backspace">&lt;</button>
             <button class=" opBtn" onclick="clearDisplay()">C</button>
+            <button class=" opBtn" onclick="subtractFromDisplay()" id="backspace">&lt;</button>
+
+            <button class="blank"></button>
+            <button class="opBtn resizeBtn mathBtn" onclick="addParenthesis('(')">( ) </button>
 
             <button class=" numBtn" onclick="appendToDisplay('7')">7</button>
             <button class="numBtn" onclick="appendToDisplay('8')">8</button>
             <button class="numBtn" onclick="appendToDisplay('9')">9</button>
-            <button class="opBtn" onclick="appendToDisplay('/')">/</button>
+            <button class="opBtn mathBtn" onclick="appendToDisplay('/')">/</button>
 
             <button class="numBtn" onclick="appendToDisplay('4')">4</button>
             <button class="numBtn" onclick="appendToDisplay('5')">5</button>
             <button class="numBtn" onclick="appendToDisplay('6')">6</button>
 
-            <button class="opBtn" onclick="appendToDisplay('*')">*</button>
+            <button class="opBtn mathBtn" onclick="appendToDisplay('*')">*</button>
 
 
             <button class="numBtn" onclick="appendToDisplay('1')">1</button>
             <button class="numBtn" onclick="appendToDisplay('2')">2</button>
             <button class="numBtn" onclick="appendToDisplay('3')">3</button>
 
-            <button class="opBtn" onclick="appendToDisplay('+')">+</button>
+            <button class="opBtn mathBtn" onclick="appendToDisplay('+')">+</button>
 
             <button class="numBtn" onclick="appendToDisplay('.')">.</button>
 
             <button class="numBtn" onclick="appendToDisplay('0')">0</button>
 
             <button class="opBtn" id="equal-button" onclick="calculate()">=</button>
-            <button class="opBtn" onclick="appendToDisplay('-')">-</button>
+            <button class="opBtn mathBtn" onclick="appendToDisplay('-')">-</button>
             <!-- 
             <button class="blank"></button>
             <button class=" blank"></button> -->
@@ -48,7 +66,7 @@
         </div>
     </div>
 
-    <script src=" scripts.js"></script>
+    <script src="scripts.js"></script>
 </body>
 
 </html>
