@@ -63,5 +63,10 @@ function calculate() {
   }
 }
 function subtractFromDisplay() {
-  display.value = display.value.slice(0, -1);
+  if (display.value.length === 1) {
+    display.value = "0";
+  } else {
+    display.value = display.value.slice(0, -1);
+  }
 }
+// if length is less that 1 and number is 0 do nothing
