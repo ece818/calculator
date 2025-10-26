@@ -1,5 +1,5 @@
 const display = document.getElementById("display");
-
+let parenthesisOn = false;
 let lastChar = "0";
 function appendToDisplay(input) {
   getLastChar();
@@ -50,6 +50,7 @@ function appendToDisplay(input) {
 }
 function getLastChar() {
   lastChar = display.value.at(-1);
+  return lastChar;
 }
 function clearDisplay() {
   display.value = "0";
@@ -70,3 +71,22 @@ function subtractFromDisplay() {
   }
 }
 // if length is less that 1 and number is 0 do nothing
+
+function addParenthesis() {
+  // update lastChar first
+  getLastChar();
+  if (!parenthesisOn) {
+    parenthesisOn = true;
+    appendToDisplay("(");
+  } else if (parenthesisOn && lastChar === "(") {
+    const previous_display = display.value;
+    display.value = "Enter a #";
+    setTimeout(() => {
+      display.value = previous_display;
+      getLastChar();
+    }, 3000);
+  } else {
+    appendToDisplay(")");
+    parenthesisOn = false;
+  }
+}

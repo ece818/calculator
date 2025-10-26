@@ -12,7 +12,7 @@
     <div class="calculator">
         <input readonly class="display" id="display" value="" />
         <div class="keys">
-            <button class="opBtn resizeBtn" onclick="appendToDisplay('(')">(</button>
+            <button class="opBtn resizeBtn" onclick="addParenthesis('(')">(</button>
             <button class="opBtn resizeBtn" onclick="appendToDisplay(')')">)</button>
             <button class=" opBtn" onclick="subtractFromDisplay()" id="backspace">&lt;</button>
             <button class=" opBtn" onclick="clearDisplay()">C</button>
@@ -41,9 +41,9 @@
 
             <button class="opBtn" id="equal-button" onclick="calculate()">=</button>
             <button class="opBtn" onclick="appendToDisplay('-')">-</button>
-
+            <!-- 
             <button class="blank"></button>
-            <button class=" blank"></button>
+            <button class=" blank"></button> -->
 
         </div>
     </div>
